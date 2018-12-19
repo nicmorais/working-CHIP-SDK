@@ -1,6 +1,8 @@
 # CHIP-SDK
 Everything needed to develop software for C.H.I.P. - now working
 
+This and [CHIP-tools](https://github.com/nicmorais/working-CHIP-tools) has been tested on Ubuntu 18.
+
 ## Installation
 
 ### VirtualBox
