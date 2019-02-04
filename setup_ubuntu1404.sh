@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\n Setting up environment in Ubuntu 14.04"
+echo -e "\n Setting up environment in Ubuntu"
 sudo apt-get -y update
 sudo apt-get -y install \
  build-essential \
@@ -72,7 +72,7 @@ for BIN in ${SUNXI_TOOLS[@]};do
 done
 popd
 
-git clone http://github.com/nextthingco/chip-mtd-utils
+git clone http://chip.jfpossibilities.com/gits/CHIP-mtd-utils.git chip-mtd-utils
 pushd chip-mtd-utils
 git checkout by/1.5.2/next-mlc-debian
 make
