@@ -89,7 +89,7 @@ git clone https://github.com/nicmorais/working-CHIP-tools CHIP-tools
 
 echo -e "\n Installing CHIP-buildroot"
 if [ ! -d CHIP-buildroot ]; then
-  git clone http://github.com/NextThingCo/CHIP-buildroot
+  git clone https://github.com/ntc-chip-revived/CHIP-buildroot
 else
   pushd CHIP-buildroot
   git pull
