@@ -7,6 +7,10 @@ This and [CHIP-tools](https://github.com/nicmorais/working-CHIP-tools) has been 
 
 ## Installation
 
+### Ubuntu/Debian
+    git clone https://github.com/nicmorais/working-CHIP-SDK CHIP-SDK
+    cd CHIP-SDK && sudo chmod +x setup_ubuntu.sh
+    sudo ./setup_ubuntu.sh`
 ### VirtualBox
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. Install the [Oracle VM VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads) for the host - this is necessary to flash C.H.I.P from inside the virtual machine.
