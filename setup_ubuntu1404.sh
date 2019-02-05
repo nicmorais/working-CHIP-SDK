@@ -1,7 +1,7 @@
 #!/bin/bash
 function installbuildroot(){
 if [ ! -d CHIP-buildroot ]; then
-  echo "git clone https://github.com/ntc-chip-revived/CHIP-buildroot"
+  git clone https://github.com/ntc-chip-revived/CHIP-buildroot
 else
   pushd CHIP-buildroot
   git pull
