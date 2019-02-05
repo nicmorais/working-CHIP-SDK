@@ -1,4 +1,23 @@
 #!/bin/bash
+function installbuildroot(){
+if [ ! -d CHIP-buildroot ]; then
+  echo "git clone https://github.com/ntc-chip-revived/CHIP-buildroot"
+else
+  pushd CHIP-buildroot
+  git pull
+  popd
+fi
+}
+
+function ask() {
+ echo -e 'Do you want to install CHIP-buildroot? (44MB) [Y/n]'
+ read -n 1 -p "" answer
+ case "$answer" in
+   y|Y|"" ) installbuildroot;;
+   n|N ) echo -e '\nCHIP-buildroot will not installed. Exiting. ';;
+  * ) echo -e '\nYour answer is invalid.' && ask;;
+ esac
+}
 
 echo -e "\n Setting up environment in Ubuntu"
 sudo apt-get -y update
@@ -53,7 +72,7 @@ echo -e "\n Installing sunxi-tools"
 if [ -d sunxi-tools ]; then
   rm -rf sunxi-tools
 fi
-git clone http://github.com/linux-sunxi/sunxi-tools
+git clone https://github.com/linux-sunxi/sunxi-tools
 pushd sunxi-tools
 make
 make misc
@@ -87,14 +106,7 @@ if [ -d CHIP-tools ]; then
 fi
 git clone https://github.com/nicmorais/working-CHIP-tools CHIP-tools
 
-echo -e "\n Installing CHIP-buildroot"
-if [ ! -d CHIP-buildroot ]; then
-  git clone https://github.com/ntc-chip-revived/CHIP-buildroot
-else
-  pushd CHIP-buildroot
-  git pull
-  popd
-fi
+ask
 
 if [ $(echo $PWD | grep vagrant) ];then
   sudo chown -R vagrant:vagrant *
